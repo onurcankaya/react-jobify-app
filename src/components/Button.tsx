@@ -5,12 +5,12 @@ const sharedStyles = css`
   border-radius: var(--borderRadius);
   border-color: transparent;
   padding: 0.5rem 1rem;
-  text-transform: uppercase;
+  letter-spacing: var(--letterSpacing);
   background: var(--primary-600);
   color: var(--white);
   transition: var(--transition);
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 1rem;
   &:hover {
     background: var(--primary-500);
   }
