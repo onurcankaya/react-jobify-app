@@ -136,3 +136,8 @@ h4 {
 h5 {
   font-size: 1.25rem;
 }
+
+/* react-toastify */
+.Toastify__toast {
+  text-transform: capitalize;
+}
