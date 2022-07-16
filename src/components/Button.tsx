@@ -6,8 +6,12 @@ type Props = {
 }
 
 const sharedStyles = css`
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 0.5rem;
   font-size: 1rem;
+  text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
   transition: var(--transition);
   cursor: pointer;
@@ -15,6 +19,7 @@ const sharedStyles = css`
 
 const transparentButtonStyles = css`
   ${sharedStyles}
+  display: inline-block;
   color: var(--primary-600);
   background-color: transparent;
   border: none;
@@ -33,7 +38,6 @@ const buttonStyles = css`
   box-shadow: var(--shadow-2);
   letter-spacing: var(--letterSpacing);
   transition: var(--transition);
-  text-transform: capitalize;
   cursor: pointer;
   &:hover {
     background: var(--primary-700);
