@@ -22,7 +22,7 @@ const initialState: StateProps = {
   isMember: true,
 }
 
-export const Register = () => {
+export const Register = (): JSX.Element => {
   const [values, setValues] = useState(initialState)
   const { user, isLoading } = useSelector((store: RootState) => store.user)
   const dispatch = useDispatch<AppDispatch>()
@@ -30,7 +30,7 @@ export const Register = () => {
 
   useEffect(() => {
     if (user) {
-      navigate('/dashboard')
+      navigate('/')
     }
   }, [user, navigate])
 
@@ -88,7 +88,7 @@ export const Register = () => {
           handleChange={handleChange}
         />
         <Button type='submit' disabled={isLoading}>
-          {isLoading ? 'Loading' : 'Submit'}
+          {isLoading ? 'Loading...' : 'Submit'}
         </Button>
         <Description>
           {values.isMember ? 'Not a member yet?' : 'Already a member?'}

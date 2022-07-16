@@ -6,6 +6,7 @@ import {
   addUserToLocalStorage,
   customFetch,
   getUserFromLocalStorage,
+  removeUserFromLocalStorage,
 } from '../../utils'
 
 import {
@@ -54,7 +55,12 @@ const initialState: State = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    logoutUser: (state) => {
+      state.user = null
+      removeUserFromLocalStorage()
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(registerUser.pending, (state) => {
       state.isLoading = true
@@ -88,3 +94,4 @@ const userSlice = createSlice({
 })
 
 export const userReducer = userSlice.reducer
+export const { logoutUser } = userSlice.actions

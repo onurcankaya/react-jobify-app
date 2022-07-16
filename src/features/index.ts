@@ -1,1 +1,6 @@
-export { userReducer, registerUser, loginUser } from './user/userSlice'
+export {
+  userReducer,
+  registerUser,
+  loginUser,
+  logoutUser,
+} from './user/userSlice'

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import figures from '../assets/images/figures.svg'
 import { LinkButton, Logo } from '../components'
 
-export const Landing = () => {
+export const Landing = (): JSX.Element => {
   return (
     <Wrapper>
       <Nav>

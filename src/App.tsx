@@ -5,15 +5,15 @@ import 'normalize.css'
 import './index.css'
 import 'react-toastify/dist/ReactToastify.css'
 
-import { Dashboard, Error, Landing, Register } from './pages'
+import { Error, Landing, Register, SharedLayout } from './pages'
 
 export function App(): JSX.Element {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Landing />} />
+        <Route path='/' element={<SharedLayout />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/landing' element={<Landing />} />
         <Route path='*' element={<Error />} />
       </Routes>
       <ToastContainer />

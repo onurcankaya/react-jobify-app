@@ -13,7 +13,7 @@ export const DropdownButton = ({
   label: string | undefined
   onClick: () => void
   content: JSX.Element | null
-}) => (
+}): JSX.Element => (
   <Wrapper>
     <Button type='button' onClick={onClick}>
       {icon}
