@@ -1,3 +1,4 @@
+export { AddJob, AllJobs, Stats, Profile } from './Dashboard'
 export { Error } from './Error'
 export { Landing } from './Landing'
 export { PrivateRoute } from './PrivateRoute'

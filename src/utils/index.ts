@@ -1,6 +1,6 @@
 export { customFetch } from './axios'
 export {
-  addUserToLocalStorage,
-  getUserFromLocalStorage,
-  removeUserFromLocalStorage,
+  addItemToLocalStorage,
+  getItemFromLocalStorage,
+  removeItemFromLocalStorage,
 } from './localStorage'

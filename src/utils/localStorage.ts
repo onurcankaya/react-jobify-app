@@ -1,15 +1,15 @@
-import { User } from '../types/user'
+import { UI, User } from '../types'
 
-export const addUserToLocalStorage = (user: User) => {
-  localStorage.setItem('user', JSON.stringify(user))
+export const addItemToLocalStorage = (key: string, item: User | UI) => {
+  localStorage.setItem(key, JSON.stringify(item))
 }
 
-export const getUserFromLocalStorage = () => {
-  const result = localStorage.getItem('user')
-  const user = result ? JSON.parse(result) : null
-  return user
+export const getItemFromLocalStorage = (key: string) => {
+  const result = localStorage.getItem(key)
+  const item = result ? JSON.parse(result) : null
+  return item
 }
 
-export const removeUserFromLocalStorage = () => {
-  localStorage.removeItem('user')
+export const removeItemFromLocalStorage = (key: string) => {
+  localStorage.removeItem(key)
 }

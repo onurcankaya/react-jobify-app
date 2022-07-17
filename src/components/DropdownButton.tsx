@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   position: relative;
   .dropdown {
     position: absolute;
-    top: 40px;
+    top: 45px;
     left: 0;
     width: 100%;
     background: var(--primary-100);

@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import { userReducer } from './features'
+import { uiReducer, userReducer } from './features'
 
 export const store = configureStore({
   reducer: {
+    ui: uiReducer,
     user: userReducer,
   },
 })

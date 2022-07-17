@@ -3,10 +3,10 @@ import { toast, ToastContent } from 'react-toastify'
 
 import { User } from '../../types'
 import {
-  addUserToLocalStorage,
+  addItemToLocalStorage,
   customFetch,
-  getUserFromLocalStorage,
-  removeUserFromLocalStorage,
+  getItemFromLocalStorage,
+  removeItemFromLocalStorage,
 } from '../../utils'
 
 import {
@@ -49,7 +49,7 @@ export const loginUser = createAsyncThunk<LoginUserResponse, LoginUserPayload>(
 
 const initialState: State = {
   isLoading: false,
-  user: getUserFromLocalStorage(),
+  user: getItemFromLocalStorage('user'),
 }
 
 const userSlice = createSlice({
@@ -58,7 +58,7 @@ const userSlice = createSlice({
   reducers: {
     logoutUser: (state) => {
       state.user = null
-      removeUserFromLocalStorage()
+      removeItemFromLocalStorage('user')
     },
   },
   extraReducers: (builder) => {
@@ -69,7 +69,7 @@ const userSlice = createSlice({
         const { user } = action.payload
         state.isLoading = false
         state.user = user
-        addUserToLocalStorage(user)
+        addItemToLocalStorage('user', user)
         toast.success(`Welcome ${user.name}!`)
       }),
       builder.addCase(registerUser.rejected, (state, action) => {
@@ -83,7 +83,7 @@ const userSlice = createSlice({
         const { user } = action.payload
         state.isLoading = false
         state.user = user
-        addUserToLocalStorage(user)
+        addItemToLocalStorage('user', user)
         toast.success(`Welcome back ${user.name}!`)
       }),
       builder.addCase(loginUser.rejected, (state, action) => {

@@ -11,7 +11,6 @@ const sharedStyles = css`
   justify-content: center;
   gap: 0 0.5rem;
   font-size: 1rem;
-  text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
   transition: var(--transition);
   cursor: pointer;

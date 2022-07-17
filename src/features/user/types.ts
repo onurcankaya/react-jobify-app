@@ -1,11 +1,7 @@
+import { User } from '../../types'
+
 export type RegisterUserResponse = {
-  user: {
-    email: string
-    name: string
-    lastName: string
-    location: string
-    token: string
-  }
+  user: User
 }
 export type RegisterUserPayload = {
   name: string
@@ -14,13 +10,7 @@ export type RegisterUserPayload = {
 }
 
 export type LoginUserResponse = {
-  user: {
-    email: string
-    name: string
-    lastName: string
-    location: string
-    token: string
-  }
+  user: User
 }
 export type LoginUserPayload = {
   email: string

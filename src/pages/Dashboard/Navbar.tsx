@@ -32,7 +32,7 @@ export const Navbar = (): JSX.Element => {
           content={
             isDropdownOpen ? (
               <Button type='button' transparent onClick={logout}>
-                log out
+                Log out
               </Button>
             ) : null
           }
