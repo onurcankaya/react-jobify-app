@@ -1,4 +1,5 @@
 export { Error } from './Error'
 export { Landing } from './Landing'
+export { PrivateRoute } from './PrivateRoute'
 export { Register } from './Register'
 export { SharedLayout } from './Dashboard'

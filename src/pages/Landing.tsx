@@ -17,7 +17,7 @@ export const Landing = (): JSX.Element => {
           <Subtitle>
             Find your next creative gig with <span>Jobify</span>
           </Subtitle>
-          <LinkButton to='/register'>Login / Register</LinkButton>
+          <LinkButton to='/login'>Log In / Register</LinkButton>
         </ContentWrapper>
         <FiguresWrapper>
           <Figures src={figures} alt='standing-human-figures' />

@@ -88,12 +88,12 @@ export const Register = (): JSX.Element => {
           handleChange={handleChange}
         />
         <Button type='submit' disabled={isLoading}>
-          {isLoading ? 'Loading...' : 'Submit'}
+          {isLoading ? 'Loading...' : values.isMember ? 'Log In' : 'Register'}
         </Button>
         <Description>
           {values.isMember ? 'Not a member yet?' : 'Already a member?'}
           <Button type='button' onClick={toggleMember} transparent>
-            {values.isMember ? 'Register' : 'Login'}
+            {values.isMember ? 'Register' : 'Log in'}
           </Button>
         </Description>
       </Form>

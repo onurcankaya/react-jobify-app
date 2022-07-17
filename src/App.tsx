@@ -5,14 +5,21 @@ import 'normalize.css'
 import './index.css'
 import 'react-toastify/dist/ReactToastify.css'
 
-import { Error, Landing, Register, SharedLayout } from './pages'
+import { Error, Landing, PrivateRoute, Register, SharedLayout } from './pages'
 
 export function App(): JSX.Element {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<SharedLayout />} />
-        <Route path='/register' element={<Register />} />
+        <Route
+          path='/'
+          element={
+            <PrivateRoute>
+              <SharedLayout />
+            </PrivateRoute>
+          }
+        />
+        <Route path='/login' element={<Register />} />
         <Route path='/landing' element={<Landing />} />
         <Route path='*' element={<Error />} />
       </Routes>
