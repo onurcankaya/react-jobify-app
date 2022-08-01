@@ -1,8 +1,7 @@
-import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { RootState } from '../../store'
+import { useAppSelector } from '../../features/hooks'
 
 import { Navbar, Sidebar } from './'
 
@@ -11,7 +10,7 @@ type Props = {
 }
 
 export const SharedLayout = (): JSX.Element => {
-  const { isSidebarOpen } = useSelector((store: RootState) => store.ui)
+  const { isSidebarOpen } = useAppSelector((store) => store.ui)
 
   return (
     <Wrapper>
@@ -29,8 +28,9 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr;
 `
 const DashboardPage = styled.div<Props>`
-  margin: 0 auto;
+  width: 85vw;
+  margin: 0;
   padding: 2rem 0;
-  margin-left: ${({ isSidebarOpen }) => (isSidebarOpen ? '300px' : '100px')};
+  margin-left: ${({ isSidebarOpen }) => (isSidebarOpen ? '300px' : '110px')};
   transition: var(--transition);
 `

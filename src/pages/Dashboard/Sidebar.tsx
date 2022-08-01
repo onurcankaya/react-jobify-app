@@ -6,12 +6,11 @@ import {
 import { ImProfile } from 'react-icons/im'
 import { IoBarChartSharp } from 'react-icons/io5'
 import { MdQueryStats } from 'react-icons/md'
-import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { toggleSidebar } from '../../features'
-import { RootState } from '../../store'
+import { useAppDispatch, useAppSelector } from '../../features/hooks'
 import { NavigationLink } from '../../types'
 
 type Props = {
@@ -46,8 +45,8 @@ const navLinks: NavigationLink[] = [
 ]
 
 export const Sidebar = () => {
-  const dispatch = useDispatch()
-  const { isSidebarOpen } = useSelector((store: RootState) => store.ui)
+  const dispatch = useAppDispatch()
+  const { isSidebarOpen } = useAppSelector((store) => store.ui)
 
   return (
     <Wrapper isSidebarOpen={isSidebarOpen}>

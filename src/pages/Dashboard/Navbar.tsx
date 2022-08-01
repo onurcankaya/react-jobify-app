@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import { FaUserCircle } from 'react-icons/fa'
-import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 import { Button, DropdownButton, Logo } from '../../components'
 import { logoutUser } from '../../features'
-import { RootState } from '../../store'
+import { useAppDispatch, useAppSelector } from '../../features/hooks'
 
 export const Navbar = (): JSX.Element => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const { user } = useSelector((store: RootState) => store.user)
-  const dispatch = useDispatch()
+  const { user } = useAppSelector((store) => store.user)
+  const dispatch = useAppDispatch()
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen)

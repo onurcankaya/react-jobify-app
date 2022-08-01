@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import styled from 'styled-components'
 
 import { Button, FormRow, Logo } from '../components'
 import { loginUser, registerUser } from '../features'
-import { AppDispatch, RootState } from '../store'
+import { useAppDispatch, useAppSelector } from '../features/hooks'
 
 type StateProps = {
   name: string
@@ -24,8 +23,8 @@ const initialState: StateProps = {
 
 export const Register = (): JSX.Element => {
   const [values, setValues] = useState(initialState)
-  const { user, isLoading } = useSelector((store: RootState) => store.user)
-  const dispatch = useDispatch<AppDispatch>()
+  const { user, isLoading } = useAppSelector((store) => store.user)
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -70,7 +69,7 @@ export const Register = (): JSX.Element => {
             name='name'
             label='name'
             value={values.name}
-            handleChange={handleChange}
+            onChange={handleChange}
           />
         )}
         <FormRow
@@ -78,14 +77,14 @@ export const Register = (): JSX.Element => {
           name='email'
           label='email'
           value={values.email}
-          handleChange={handleChange}
+          onChange={handleChange}
         />
         <FormRow
           type='password'
           name='password'
           label='password'
           value={values.password}
-          handleChange={handleChange}
+          onChange={handleChange}
         />
         <Button type='submit' disabled={isLoading}>
           {isLoading ? 'Loading...' : values.isMember ? 'Log In' : 'Register'}

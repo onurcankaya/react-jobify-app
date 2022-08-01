@@ -1,14 +1,13 @@
-import { useSelector } from 'react-redux'
 import { Navigate, RouteProps } from 'react-router-dom'
 
-import { RootState } from '../store'
+import { useAppSelector } from '../features/hooks'
 
 interface PrivateRouteProps extends RouteProps {
   children: React.ReactElement
 }
 
 export const PrivateRoute = ({ children }: PrivateRouteProps) => {
-  const { user } = useSelector((store: RootState) => store.user)
+  const { user } = useAppSelector((store) => store.user)
 
   if (!user) {
     return <Navigate to='/landing' />

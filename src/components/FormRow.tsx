@@ -5,7 +5,7 @@ type Props = {
   name: string
   label: string
   value: string
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const FormRow = ({
@@ -13,12 +13,12 @@ export const FormRow = ({
   name,
   label,
   value,
-  handleChange,
+  onChange,
 }: Props): JSX.Element => {
   return (
     <Wrapper>
       <Label htmlFor={label}>{label}</Label>
-      <Input type={type} name={name} value={value} onChange={handleChange} />
+      <Input type={type} name={name} value={value} onChange={onChange} />
     </Wrapper>
   )
 }

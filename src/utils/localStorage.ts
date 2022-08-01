@@ -1,4 +1,5 @@
-import { UI, User } from '../types'
+import { User } from '../features/user/types'
+import { UI } from '../types'
 
 export const addItemToLocalStorage = (key: string, item: User | UI) => {
   localStorage.setItem(key, JSON.stringify(item))
